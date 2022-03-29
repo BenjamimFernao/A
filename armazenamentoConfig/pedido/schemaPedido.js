@@ -1,7 +1,12 @@
 const mongoose = require("./conecao")
 const {Schema} = require("mongoose")
 
-const pedidoSchema = new Schema({
+const novoPedidos = require("../../operacoesComDados/CRUD/Create")
+const atualizarPedidos = require("../../operacoesComDados/CRUD/Update")
+const deletarPedidos = require("../../operacoesComDados/deletarProdutos")
+const lerPedidos = require("../../operacoesComDados/CRUD/Read")
+
+const pedidoEsquema = new Schema({
 
     nomeDoCliente: {type:String},
     nomesDasLojas : {type:[String]},
@@ -11,4 +16,15 @@ const pedidoSchema = new Schema({
 
 })
 
-module.exports = {pedidoSchema}
+
+pedidoEsquema.statics = {
+
+    novoPedidos,
+    atualizarPedidos,
+    deletarPedidos,
+    lerPedidos
+}
+
+
+
+module.exports = pedidoEsquema

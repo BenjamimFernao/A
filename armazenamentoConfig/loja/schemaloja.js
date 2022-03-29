@@ -1,5 +1,11 @@
 const {Schema} = require("mongoose")
 
+
+const novoLojas = require("../../operacoesComDados/CRUD/Create")
+const atualizarLojas = require("../../operacoesComDados/CRUD/Update")
+const deletarLojas = require("../../operacoesComDados/deletarProdutos")
+const lerLojas = require("../../operacoesComDados/CRUD/Read")
+
 const lojaSchema = new Schema({
 
     nome:{type:String, trim:false},
@@ -9,6 +15,13 @@ const lojaSchema = new Schema({
 
 })
 
+lojaSchema.statics = {
+    novoLojas,
+    atualizarLojas, 
+    deletarLojas,
+    lerLojas
+}
 
 
-module.exports = {lojaSchema}
+
+module.exports = lojaEsquema

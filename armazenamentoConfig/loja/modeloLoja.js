@@ -1,6 +1,6 @@
 const {mongoose} = require("./conecao")
-const {lojaSchema} = require("./schemaloja")
+const lojaEsquema = require("./schemaloja")
 
-const Loja = new mongoose.model("Loja", lojaSchema)
+const Loja = new mongoose.model("Loja", lojaEsquema)
 
-module.exports = {Loja}
+module.exports = Loja

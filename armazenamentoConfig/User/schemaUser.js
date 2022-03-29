@@ -3,7 +3,12 @@ const bcript = require("bcryptjs")
 
 const newPassword = require("./functions/newPassword")
 const logar = require("./functions/logar")
+
 const criarNovoUsuario = require("../../operacoesComDados/CRUD/Create")
+const atualizarUsuario = require("../../operacoesComDados/CRUD/Update")
+const deletarUsuario = require("../../operacoesComDados/deletarProdutos")
+const lerUsuario = require("../../operacoesComDados/CRUD/Read")
+
 
 const userSchema = new Schema({
     nome:{
@@ -62,7 +67,10 @@ userSchema.pre("save", async function (next){
 userSchema.statics = {
     newPassword,
     logar,
-    criarNovoUsuario ,
+    criarNovoUsuario,
+    lerUsuario,
+    atualizarUsuario,
+    deletarUsuario
 
 }
 

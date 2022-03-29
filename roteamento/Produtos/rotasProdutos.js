@@ -1,11 +1,14 @@
 const express = require("express")
 const routerProdutos = express.Router()
+const cors = require("cors")
 
-const {criarProduto} = require("../../operacoesComDados/CRUD/Create")
+const produto = require("../../armazenamentoConfig/produto/modeloProduto")
 
 const multer = require("multer")
 
 const upload = multer({dest: __dirname + "/up"})
+
+routerProdutos.use(cors())
 
 routerProdutos.post("/novoProduto", (req, res)=>{
 
@@ -14,7 +17,7 @@ routerProdutos.post("/novoProduto", (req, res)=>{
 
     const dados = {nome, preco}
 
-    const temp = criarProduto(dados)
+    const temp = {}
     res.send({temp})
 })
 
@@ -26,4 +29,4 @@ routerProdutos.post("/adicionarFotoDoProduto",upload.single("produto"), (req, re
 
 
 
-module.exports = {routerProdutos}
+module.exports = routerProdutos

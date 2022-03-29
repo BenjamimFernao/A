@@ -3,7 +3,6 @@ const routerUser = express.Router()
 const {User} = require("../../armazenamentoConfig/User/modeloUser")
 const cors = require("cors")
 
-const {criarProp} = require("../../operacoesComDados/CRUD/Create")
 
 routerUser.use(cors())
 
@@ -47,4 +46,4 @@ routerUser.post("/newPassword", async (req, res)=>{
 
 
 
-module.exports = {routerUser}
+module.exports = routerUser

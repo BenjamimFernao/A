@@ -1,4 +1,14 @@
 const routerServicos = require("express").Router()
+const cors = require("cors")
+
+const Servicos = require("../../armazenamentoConfig/serviço/modeloServico")
+
+
+routerServicos.use(cors())
+
+
+
+
 
 routerServicos.post("/", (req, res)=>{
 
@@ -6,4 +16,4 @@ routerServicos.post("/", (req, res)=>{
 })
 
 
-module.exports = {routerServicos}
+module.exports = routerServicos

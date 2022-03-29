@@ -1,15 +1,18 @@
 const express = require("express")
 const routerLojas = express.Router()
+const cors = require("cors")
 
-const {criarLoja} = require("../../operacoesComDados/CRUD/Create")
+const Loja = require("../../armazenamentoConfig/loja/modeloLoja")
+
+routerLojas.use(cors())
 
 routerLojas.post("/novaLoja", (req, res)=>{
 
     const dados = {}
 
-    const temp = criarLoja(dados)
+    const temp = {}
     res.send({temp})
 })
 
 
-module.exports = {routerLojas}
+module.exports = routerLojas

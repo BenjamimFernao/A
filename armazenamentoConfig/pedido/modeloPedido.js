@@ -1,6 +1,6 @@
 const {mongoose} = require("./conecao")
-const {pedidoSchema} = require("./schemaPedido")
+const pedidoEsquema = require("./schemaPedido")
 
-const Pedido = new mongoose.model("Pedido", pedidoSchema)
+const Pedido = new mongoose.model("Pedido", pedidoEsquema)
 
-module.exports = {Pedido}
+module.exports = Pedido
