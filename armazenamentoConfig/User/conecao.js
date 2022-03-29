@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/Clientes")
+mongoose.connect("mongodb://localhost:27017/Users")
 
 
 module.exports = {mongoose}

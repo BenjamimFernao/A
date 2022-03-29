@@ -1,9 +1,10 @@
-async function criarProp(dados, proprietario){
+async function criarProp(dados){
 
-    const novoProp =  await proprietario.create(dados)
+    const novoProp =  await this.create(dados)
+    
     return novoProp
     
     }
 
 
-module.exports = {criarProp}
+module.exports = criarProp

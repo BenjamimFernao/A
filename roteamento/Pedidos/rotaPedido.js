@@ -1,11 +1,11 @@
 const express = require("express")
 const routerPedidos = express.Router()
 
-const {Pedido} = require("../armazenamentoConfig/pedido/modeloPedido")
-const {criarProp} = require("../operacoesComDados/CRUD/Create")
-const {procurar, procurarId} = require("../operacoesComDados/CRUD/Read")
-const {eliminarPorId, eliminarMuitos, eliminarUm} = require("../operacoesComDados/CRUD/Delete")
-const {atualizarMuitos, atualizarPorId, atualizarUm} = require("../operacoesComDados/CRUD/Update")
+const {Pedido} = require("../../armazenamentoConfig/pedido/modeloPedido")
+const {criarProp} = require("../../operacoesComDados/CRUD/Create")
+const {procurar, procurarId} = require("../../operacoesComDados/CRUD/Read")
+const {eliminarPorId, eliminarMuitos, eliminarUm} = require("../../operacoesComDados/CRUD/Delete")
+const {atualizarMuitos, atualizarPorId, atualizarUm} = require("../../operacoesComDados/CRUD/Update")
 
 
 
