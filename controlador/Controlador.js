@@ -7,6 +7,11 @@ const {criarNovoUsuario, atualizarUsuario, deletarUsuario, lerUsuario} =  requir
 const {criarNovaLoja, atualizarLoja, lerLoja, deletarLoja} = require("./accoes/Lojas/bancoDeDados/CRUD/moduloCRUD")
 const {criarNovoServico, atualizarServico, lerServico, deletarServico} = require("./accoes/Servico/bancoDeDados/CRUD/moduloCRUD")
 const {criarNovoPedido, atualizarPedido, lerPedido, deletarPedido} = require("./accoes/Pedidos/bancoDeDados/CRUD/moduloCRUD")
+const {criarNovoProduto, lerProduto, atualizarProduto, deletarProduto} = require("./accoes/Produto/bancoDeDados/CRUD/moduloCRUD")
+const {criarNovoPubProduto, deletarPubProduto, lerPubProduto, atualizarPubProduto} = require("./accoes/PubProduto/bancoDeDados/CRUD/moduloCRUD")
+const {criarNovoPubUser, deletarPubUser, lerPubUser, atualizarPubUser} = require("./accoes/PubUser/bancoDeDados/CRUD/moduloCRUD")
+const {criarNovoPubServico, deletarPubServico, lerPubServico, atualizarPubServico} = require("./accoes/PubServicos/bancoDeDados/CRUD/moduloCRUD")
+
 
 function controller(){
     this.user = {
@@ -44,7 +49,35 @@ function controller(){
         deletarPedido
     }
 
-    this.produto = {}
+    this.produto = {
+        criarNovoProduto,
+        atualizarProduto,
+        deletarProduto,
+        lerProduto
+
+    }
+
+    this.pubProduto = {
+        criarNovoPubProduto,
+        deletarPubProduto,
+        atualizarPubProduto,
+        lerPubProduto
+    }
+
+    this.pubUser = {
+        criarNovoPubUser,
+        deletarPubUser,
+        lerPubUser,
+        atualizarPubUser
+    }
+
+    this.pubServico = {
+        criarNovoPubServico,
+        deletarPubServico,
+        atualizarPubServico,
+        lerPubServico
+        
+    }
 }
 
 const singleController = new controller

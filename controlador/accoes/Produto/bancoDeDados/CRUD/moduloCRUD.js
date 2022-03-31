@@ -1,7 +1,7 @@
-const criarNovoUsuario = require("./criarNovoUsuario")
-const atualizarUsuario = require("./atualizarUsuario")
-const deletarUsuario = require("./deletarConta")
-const lerUsuario = require("./lerUsuario")
+const criarNovoProduto = require("./criarNovoProduto")
+const atualizarProduto = require("./atualizarProduto")
+const deletarProduto = require("./deletarProduto")
+const lerProduto = require("./lerProduto")
 
 
-module.exports = {criarNovoUsuario, atualizarUsuario, deletarUsuario, lerUsuario}
+module.exports = {criarNovoProduto, atualizarProduto, deletarProduto, lerProduto}
