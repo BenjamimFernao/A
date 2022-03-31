@@ -1,7 +1,8 @@
 const express = require("express")
 const routerUser = express.Router()
-const {User} = require("../../armazenamentoConfig/User/modeloUser")
 const cors = require("cors")
+
+const controlador = require("../../controlador/Controlador")
 
 
 routerUser.use(cors())
@@ -16,6 +17,8 @@ routerUser.post("/novoUser", async (req, res)=>{
         res.send({status: 0})
     }else{
         const user = {email, senha, telefone}
+
+        
         const temp = await User.criarNovoUsuario(user)
         console.log("ok")
         res.send({status : 1})
@@ -38,9 +41,10 @@ routerUser.post("/loginUser", async (req, res)=>{
 })
 
 
-routerUser.post("/newPassword", async (req, res)=>{
-    const {id, senha} = req.body
-    const resposta = await User.newPassword(id, senha)
+routerUser.post("/novaSenha", async (req, res)=>{
+
+    const {id, novaSenha} = req.body
+    const resposta = await controlador.user.usuarioAtualizarSenha(id, novaSenha)
     res.send(resposta)
 })
 
