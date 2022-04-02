@@ -13,7 +13,7 @@ const esquemaPub = new Schema({
     },
     PrestadorDeServico :{
         type: Schema.Types.ObjectId,
-        ref:"PrestadorDeServico"
+        ref:"Usuario"
     }
 })
 

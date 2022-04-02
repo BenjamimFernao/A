@@ -24,7 +24,8 @@ const esquemaServicos = new Schema({
     descricao:{
         type: String,
         required: true
-    }
+    },
+    URLFotoDePerfil:String
 })
 
 esquema.statics = {

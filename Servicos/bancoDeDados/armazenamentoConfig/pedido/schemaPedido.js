@@ -8,13 +8,15 @@ const lerPedidos = require("../../operacoesComDados/CRUD/Read")
 
 const pedidoEsquema = new Schema({
 
-    nomeDoCliente: {type:String},
-    nomesDasLojas : {type:[String]},
-    produtosELojas : {type:Map},
-    produtoEPreco: {type:Map},
+    Cliente: {type:Schema.Types.ObjectId, ref:"Usuario"},
+    Lojas : {type:[String]},
+    Produtos : {type:[String]},
+    LojaEProdutos : {type:Map},
+    MensagemAdicional : String,
     data : {type:Date, default:Date.now()},
+  
 
-})
+}, {timestamps: true})
 
 
 pedidoEsquema.statics = {

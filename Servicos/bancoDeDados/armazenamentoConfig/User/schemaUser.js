@@ -38,7 +38,8 @@ const userSchema = new Schema({
     sessionId:{
         type: Number,
         default: ""
-    }
+    },
+    URLFotoDePerfil:String
 
 }, {timestamps:true})
 

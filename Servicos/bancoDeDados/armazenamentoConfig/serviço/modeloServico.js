@@ -3,7 +3,7 @@ const SchemaServicos =  require("./schemaServicos")
 
 
 
-const Servicos = mongoose.model("Servicos", SchemaServicos)
+const Servicos = mongoose.model("PrestadorDeServicos", SchemaServicos)
 
 
 module.exports = Servicos
